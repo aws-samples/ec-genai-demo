@@ -1,0 +1,80 @@
+[[pages]]
+path = "top.py"
+name = "Top"
+icon = ":house:"
+
+# 製品デザイン生成
+[[pages]]
+name = "製品デザイン案生成"
+icon = ":bulb:"
+is_section = true
+
+[[pages]]
+path = "design-generation/app.py"
+name = "　　製品デザイン案生成"
+url_path = "design-generation"
+
+# 商品説明文生成
+[[pages]]
+name = "商品説明文生成"
+icon = ":writing_hand:"
+is_section = true
+
+[[pages]]
+path = "description-generator/app.py"
+name = "　　商品説明文生成"
+url_path = "description-generator"
+
+[[pages]]
+path = "lp-generator/app.py"
+name = "　　LP生成"
+url_path = "lp-generator"
+
+[[pages]]
+path = "case-study/case-description-gen.py"
+name = "　　事例"
+url_path = "case-description-gen"
+
+# 背景画像修正
+[[pages]]
+name = "商品画像背景修正"
+icon = ":frame_with_picture:"
+is_section = true
+
+[[pages]]
+path = "titan-image-inpainter/app.py"
+name = "　　商品画像背景修正"
+url_path = "titan-image-inpainter"
+
+[[pages]]
+path = "case-study/case-img-gen.py"
+name = "　　事例"
+url_path = "case-img-gen"
+
+# マルチモーダル検索
+[[pages]]
+name = "マルチモーダル商品検索"
+icon = ":mag:"
+is_section = true
+
+[[pages]]
+path = "search-exp/app.py"
+name = "　　1.解説"
+url_path = "search-exp"
+
+[[pages]]
+path = "search-exp/02_item_register.py"
+name = "　　2.商品登録"
+
+[[pages]]
+path = "search-exp/03_item_search.py"
+name = "　　3.商品検索"
+
+[[pages]]
+path = "search-exp/01_user_info.py"
+name = "　　ユーザー登録(Option)"
+
+[[pages]]
+path = "case-study/case-search-exp.py"
+name = "　　事例"
+url_path = "case-search-exp"

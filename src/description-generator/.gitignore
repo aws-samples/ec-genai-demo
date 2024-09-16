@@ -1,0 +1,116 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# 通常、PyInstallerは一時ファイルやビルドの出力をこのディレクトリに格納します。
+dist/
+build/
+pyinstaller/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+# pipenvの仮想環境はプロジェクトのルートにあることが多いです。
+# .venvは、pipenvを使用している場合に仮想環境のディレクトリ名として一般的に使用されます。
+.venv/
+# Pipenvのグラフィカルなパイプラインのキャッシュ
+.pipenv_graph.dot
+
+# poetry
+# poetryの依存関係と仮想環境の情報
+poetry.lock
+.pypoetry-cache
+
+# pytest
+.cache
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# virtualenv
+venv/
+ENV/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# dotenv
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# JupyterLab
+.jupyterlab-debug.log
+
+# Streamlit
+.streamlit/
+
+# AWS CLI
+.aws/
+
+# Local .terraform directories
+**/.terraform/*
+
+# .env file
+.env
+
+# .json file
+*.json

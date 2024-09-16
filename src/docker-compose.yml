@@ -1,0 +1,12 @@
+services:
+  ec-genai-demo:
+    ports:
+      - "8501:8501"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_SESSION_TOKEN
+      - region=us-west-2
