@@ -1,6 +1,7 @@
-## デプロイ
->> [!IMPORTANT]  
-> このリポジトリでは、デフォルトのモデルとしてオレゴンリージョン (us-west-2) の以下モデルを利用する設定になっています。  
+## デプロイ by CDK
+
+> [!IMPORTANT]  
+> このリポジトリでは、Amazon Bedrock のモデルとしてオレゴンリージョン (us-west-2) の以下モデルを利用する設定になっています。  
 > - Amazon
 >   - Titan Image Generator G1
 >   - Titan Multimodal Embeddings G1
@@ -9,8 +10,7 @@
 >   - Claude 3 Sonnet
 >   - Claude 3 Haiku  
 > 
-> [Model access 画面 (us-east-1)](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/modelaccess)を開き、モデルアクセスにチェックして Save changes してください。
-
+> 事前に本サンプルをデプロイするアカウントにて、[Model access 画面 (us-west-2)](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/modelaccess)を開き、モデルアクセスにチェックして Save changes してください。
 
 デプロイには [AWS Cloud Development Kit](https://aws.amazon.com/jp/cdk/)（以降 CDK）と[Projen](https://github.com/projen/projen)をを利用します。  
 
