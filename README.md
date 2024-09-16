@@ -27,7 +27,8 @@ Steamlit 上の Python スクリプトにより、Amazon Bedrock の API を呼�
 ## デモ
 こちらのデモについて 2024/7/24 の AWS Expert Online  for JAWS-UG #34 にて、動画付きで紹介しました。  
 
-[!['デモ動画'](https://youtu.be/6Ud6GgnrU6o?t=840)]
+[!['デモ動画'](https://img.youtube.com/vi/6Ud6GgnrU6o/0.jpg)](https://youtu.be/6Ud6GgnrU6o?t=840)
+
 
 ## デプロイ
 > [!IMPORTANT]  
