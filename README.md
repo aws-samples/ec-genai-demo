@@ -41,9 +41,15 @@ Steamlit 上の Python スクリプトにより、Amazon Bedrock の API を呼�
 > 事前に本サンプルをデプロイするアカウントにて、[Model access 画面 (us-west-2)](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/modelaccess)を開き、モデルアクセスにチェックして Save changes してください。
 
 
-デプロイには [AWS Cloud Development Kit](https://aws.amazon.com/jp/cdk/)（以降 CDK）と [Projen](https://github.com/projen/projen) を利用します。  
+まず以下のコマンドで`cdk`ディレクトリに移動し、セットアップします。  
+
+```bash
+cd cdk
+npx projen install
+```
 
 > [!IMPORTANT]  
+> デプロイには [AWS Cloud Development Kit](https://aws.amazon.com/jp/cdk/)（以降 CDK）と [Projen](https://github.com/projen/projen) を利用します。  
 > Projen と CDK については以下 AWS ブログも参考にしてください。  
 > https://aws.amazon.com/jp/blogs/news/getting-started-with-projen-and-aws-cdk/  
 
@@ -54,15 +60,7 @@ CDK を利用したことがない場合、初回のみ [Bootstrap](https://docs
 npx cdk bootstrap
 ```
 
-続いて、以下のコマンドで`cdk`ディレクトリに移動し、セットアップします。  
-
-```bash
-cd cdk
-
-npx projen install
-```
-
-以下コマンドで、AWS リソースをデプロイします。デプロイが完了するまで、お待ちください。  
+続いて、以下コマンドで、AWS リソースをデプロイします。デプロイが完了するまで、お待ちください。  
 ※大体15分ほどかかります。  
 ```bash
 npx projen build
