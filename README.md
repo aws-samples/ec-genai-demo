@@ -114,6 +114,15 @@ source .venv/bin/activate
 region=us-west-2 poetry run streamlit run app.py
 ```
 
+## お客様事例
+### [株式会社オズビジョン](https://www.oz-vision.co.jp)
+
+![alt text](src/img/case-study/OZVISION.png)
+
+生成AIによる検索体験向上の検討にあたって、本サンプル ec-genai-demo を活用。ベクトル検索デモ機能に自社データを登録し、PoCを実施いただいた。  
+- [ポイントモール「ハピタス」で生成AIを活用した次世代広告検索機能をリリース | NEWS | OZVISION - 株式会社オズビジョン](https://www.oz-vision.co.jp/news/835/)
+- [株式会社オズビジョン様の AWS 生成 AI 事例 : Amazon Bedrock と Amazon Aurora によるポイント対象広告検索機能 | Amazon Web Services ブログ](https://aws.amazon.com/jp/blogs/news/gen-ai-usecase-ozvision/)
+
 ## Requests & Issues
 ご要望や問題があれば [Issue](https://github.com/aws-samples/ec-genai-demo/issues) に起票をお願いします。  
 
