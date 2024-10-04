@@ -1,0 +1,103 @@
+app:
+  description: ''
+  icon: "\u270D\uFE0F"
+  icon_background: '#FFEAD5'
+  mode: completion
+  name: "\u5546\u54C1\u8AAC\u660E\u6587\u751F\u6210"
+kind: app
+model_config:
+  agent_mode:
+    enabled: false
+    max_iteration: 5
+    strategy: function_call
+    tools: []
+  annotation_reply:
+    enabled: false
+  chat_prompt_config: {}
+  completion_prompt_config: {}
+  dataset_configs:
+    datasets:
+      datasets: []
+    retrieval_model: single
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    image:
+      detail: high
+      enabled: true
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: anthropic.claude-3-haiku-20240307-v1:0
+    provider: bedrock
+  more_like_this:
+    enabled: false
+  opening_statement: null
+  pre_prompt: "<your role>\u3042\u306A\u305F\u306F\u3001E\u30B3\u30DE\u30FC\u30B9\u306B\
+    \u304A\u3051\u308B\u58F2\u5834\u3065\u304F\u308A\u306E\u30D7\u30ED\u30D5\u30A7\
+    \u30C3\u30B7\u30E7\u30CA\u30EB\u3067\u3059\u3002</your role>\n<instruction>\n\u65B0\
+    \u5546\u54C1 {{item}}\u306E\u8CA9\u58F2\u4FC3\u9032\u306E\u305F\u3081\u306B\u3001\
+    E\u30B3\u30DE\u30FC\u30B9\u30B5\u30A4\u30C8\u3067\u30E6\u30FC\u30B6\u30FC\u304C\
+    \u601D\u308F\u305A\u8CFC\u5165\u3057\u305F\u304F\u306A\u308B\u3088\u3046\u306A\
+    \u9B45\u529B\u7684\u306A\u5546\u54C1\u8AAC\u660E\u3092\u8003\u3048\u3066\u304F\
+    \u3060\u3055\u3044\u3002\n\u3042\u306A\u305F\u304C\u8AAD\u307F\u8FBC\u3093\u3060\
+    \u753B\u50CF\u306F {{item}}\u306E\u5199\u771F\u3067\u3059\u3002\n{{item}}\u306E\
+    \u8272\u3084\u7A2E\u985E\u3092\u5206\u6790\u3057\u3001\u3053\u306E\u5546\u54C1\
+    \u3092\u5177\u4F53\u7684\u306B\u8AAC\u660E\u3057\u3066\u304F\u3060\u3055\u3044\
+    \u3002\u5546\u54C1\u306E\u7279\u5FB4\u304C feature \u306B\u8A18\u8F09\u3055\u308C\
+    \u307E\u3059\u3002\n\u8AAC\u660E\u6587\u306E\u63D0\u6848\u306F step \u306B\u5247\
+    \u3063\u3066\u4F5C\u6210\u3057\u3066\u304F\u3060\u3055\u3044\u3002\n</instruction>\n\
+    <step>\n\u30B9\u30C6\u30C3\u30D71: \u5546\u54C1\u306E\u57FA\u672C\u60C5\u5831\u3092\
+    \u78BA\u8A8D\u3059\u308B\n\u30B9\u30C6\u30C3\u30D72: \u30BF\u30FC\u30B2\u30C3\u30C8\
+    \u5C64\u3092\u8A2D\u5B9A\u3059\u308B\n\u30B9\u30C6\u30C3\u30D73: \u30BF\u30FC\u30B2\
+    \u30C3\u30C8\u5C64\u306B\u5408\u308F\u305B\u305F\u8A00\u8449\u9063\u3044\u3084\
+    \u30C8\u30FC\u30F3\u3092\u6C7A\u3081\u308B\n\u30B9\u30C6\u30C3\u30D74: \u6982\u8981\
+    \u3092\u66F8\u304F\n\u30B9\u30C6\u30C3\u30D75: \u57CB\u3081\u308B\u3079\u304D\u5404\
+    \u9805\u76EE\u3092\u66F8\u304F\n\u30B9\u30C6\u30C3\u30D76: \u5168\u4F53\u3092\u901A\
+    \u3057\u3066\u63A8\u6572\u3059\u308B\n</step>\n<feature>\n{{feature}}\n</feature>\n\
+    <topic>\n{{topic}}\n</topic>\n<constraint>\n\u30A2\u30A6\u30C8\u30D7\u30C3\u30C8\
+    \u306F topic \u306B\u8A18\u8F09\u3055\u308C\u305F\u9805\u76EE\u306B\u6CBF\u3063\
+    \u3066\u8A18\u8F09\u3057\u3066\u304F\u3060\u3055\u3044\u3002\n\u6700\u5F8C\u306B\
+    \u63A8\u5968\u30BF\u30FC\u30B2\u30C3\u30C8\u5C64\u3068\u305D\u308C\u306B\u5408\
+    \u308F\u305B\u305F\u8CA9\u58F2\u30C1\u30E3\u30CD\u30EB\u306B\u3064\u3044\u3066\
+    \u63D0\u6848\u3057\u3066\u304F\u3060\u3055\u3044\u3002\n\u306A\u304A\u3001XML\u30BF\
+    \u30B0\u306F\u51FA\u529B\u3057\u306A\u3044\u3067\u304F\u3060\u3055\u3044\u3002\
+    \n</constraint>\n"
+  prompt_type: simple
+  retriever_resource:
+    enabled: true
+  sensitive_word_avoidance:
+    configs: []
+    enabled: false
+    type: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions: []
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form:
+  - paragraph:
+      default: ''
+      label: "\u5546\u54C1\u540D"
+      required: true
+      variable: item
+  - paragraph:
+      default: ''
+      label: "\u5546\u54C1\u306E\u7279\u5FB4"
+      required: true
+      variable: feature
+  - paragraph:
+      default: ''
+      label: "\u542B\u3081\u305F\u3044\u30C8\u30D4\u30C3\u30AF"
+      required: true
+      variable: topic
+version: 0.1.0
