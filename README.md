@@ -16,7 +16,7 @@
 
 ![alt text](img/usecase.png)
 <details>
-  <summary>製品デザイン案生成</summary>
+  <summary>**製品デザイン案生成**</summary>
 
 
 新たな製品のデザインをする際のネタとなる商品画像と、デザイン案のイメージをプロンプトとして渡すことで、製品デザイン案を複数生成する実装です。
@@ -41,7 +41,7 @@
 </details>
 
 <details>
-  <summary>商品説明文生成(+インスタグラム投稿案、タグ生成、カテゴリ分類)</summary>
+  <summary>**商品説明文生成(+インスタグラム投稿案、タグ生成、カテゴリ分類)**</summary>
 
 商品画像、商品名、商品の特徴（自由入力で素材や季節、生地の厚さ等を入力）を元にその商品の分析を行い、商品説明文に含めたいトピックとして指定した項目にしたがい商品説明文を生成する実装です。
 合わせて、商品カテゴリ 3 つと、インスタグラムに対する投稿原稿も生成します。
@@ -54,7 +54,7 @@
 **仕組み**
 
 1. 商品画像、商品名、商品の特徴（自由入力で素材や季節、生地の厚さ等を入力）をインプットにその商品の分析を Claude3 で実施するプロンプトを実行しています
-   1. 
+    1. 
     ```
     <your role>あなたは、Eコマースにおける売場づくりのプロフェッショナルです。</your role>
     <instruction>
@@ -83,8 +83,8 @@
     なお、XMLタグは出力しないでください。
     </constraint>
     ```
-      1. ※プロンプトには UI のテキストウィンドウで入力された変数を埋め込んています。
-        1. {focus_item} に商品名、{feature} に商品特徴、{topic} に説明文に含めたい項目
+      - ※プロンプトには UI のテキストウィンドウで入力された変数を埋め込んています。
+      - {focus_item} に商品名、{feature} に商品特徴、{topic} に説明文に含めたい項目
    
 2. ここでは以下複数の Claude に関するプロンプトテクニックを利用しています
     1. [Claudeに役割を与える](https://docs.anthropic.com/ja/docs/give-claude-a-role)：E コマースにおける売場づくりのプロフェッショナル という役割を与えています
@@ -95,7 +95,7 @@
 </details>
 
 <details>
-  <summary>LP(ランディングページ)生成</summary>
+  <summary>**LP(ランディングページ)生成**</summary>
 
 **利用モデル**：
 - [Anthropic Claude 3.5 Sonnet / Claude 3 Haiku](https://aws.amazon.com/jp/bedrock/claude/)(併用)
@@ -106,13 +106,13 @@
 1. 商品名、LP を使って訴求したいターゲット、伝えたいコンテンツを入力として受け取る
 2. 以下の処理を各 LLM にて実施する
   1. 見出しリスト作成
-    Claude 3 Haiku に以下プロンプト
+    - Claude 3 Haiku に以下プロンプト
     ```
     生成したいLPのイメージが伝わるよう、プロンプトを入力してください","""あなたはある<item></item>を訴求するランディングページを作成するメディアライターです。
     <target></target>に<item></item>を使った<contents></contents>の魅力を伝えたいです。そのためのLPの構成となる見出しリストを作成してください。
     ```
   2. ダミー情報生成
-    Claude 3 Haiku に以下プロンプト。過去の履歴は、Amazon Bedrock [InvokeModel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock-runtime/client/invoke_model.html) API 内の[messages](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-anthropic-claude-messages.html) 内に含めて送信。
+    - Claude 3 Haiku に以下プロンプト。過去の履歴は、Amazon Bedrock [InvokeModel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock-runtime/client/invoke_model.html) API 内の[messages](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-anthropic-claude-messages.html) 内に含めて送信。
     ```
     実際に各セクションに、見出しと本文にダミー情報を入れてください。
     ```
@@ -139,21 +139,21 @@
         </output>
         ```
   4. 生成された情報をまとめて、LPを生成
-    ```
-    <content></content>を元に、LP を作成してください。
-    デザインは添付の画像を参考にして作成してください。
-    作成には<rule></rule>に従ってください。HTML と Style のみを出力してください。それ以外は出力しないでください。
-    <rule>
-    - 出力はHTMLと、それを修飾するためのStyleのみを出力してください。
-    - 画像のタグは<img src="./app/static/image_7e0ceb1.png"> のように作成してください。
-    - <images></images>の画像から選択し、同じ画像は使わないようにしてください。
-    - 画像のタグは {len(image_dict)} つ作成してください。'''
-    </rule>
-    <images>
-    {image_dict}
-    </images>
-    <content>{assistant_return_3}</content>
-    ```
+      ```
+      <content></content>を元に、LP を作成してください。
+      デザインは添付の画像を参考にして作成してください。
+      作成には<rule></rule>に従ってください。HTML と Style のみを出力してください。それ以外は出力しないでください。
+      <rule>
+      - 出力はHTMLと、それを修飾するためのStyleのみを出力してください。
+      - 画像のタグは<img src="./app/static/image_7e0ceb1.png"> のように作成してください。
+      - <images></images>の画像から選択し、同じ画像は使わないようにしてください。
+      - 画像のタグは {len(image_dict)} つ作成してください。'''
+      </rule>
+      <images>
+      {image_dict}
+      </images>
+      <content>{assistant_return_3}</content>
+      ```
 
 
 |![picture 8](img/20241004-102104.png)|![picture 9](img/20241004-102126.png)|
@@ -162,7 +162,7 @@
 </details>
 
 <details>
-  <summary>商品画像背景修正</summary>
+  <summary>**商品画像背景修正**</summary>
 
 
 元商品画像をアップロードしイメージを指示することで、商品画像や広告画像を用意する際の背景生成案を複数生成する実装です。
@@ -194,13 +194,14 @@
 </details>
 
 <details>
-  <summary>マルチモーダル/セマンティック商品検索</summary>
+  <summary>**マルチモーダル/セマンティック商品検索**</summary>
 
 商品説明文や商品画像をベクトル DB にベクトルとして格納し、商品検索時に入力したテキストや画像と意味的に近いものを取得できる、マルチモーダル検索/セマンティック検索の実装です。
 加えて、商品検索結果について、検索者のペルソナに合わせて説明文をパーソナライズして生成します。
 
 |![picture 5](img/20241004-101451.png)|![picture 6](img/20241004-101502.png)|
 |---|---|
+
 ※「健康でヘルシーなご飯」に意味合いの近い、和食やそばが検索結果上位に来ており、セマンティックサーチができていることがわかります
 
 **利用モデル**：[Anthropic Claude 3 Haiku](https://aws.amazon.com/jp/bedrock/claude/), [Amazon Titan Multimodal Embeddings G1](https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/titan-multiemb-models.html)
@@ -223,7 +224,7 @@
 </details>
 
 <details>
-  <summary>商品説明文生成とLP生成の Dify Workflow</summary>
+  <summary>**商品説明文生成とLP生成の Dify Workflow**</summary>
 
 [dify/](dify/)
 
