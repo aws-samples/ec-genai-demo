@@ -107,7 +107,7 @@
   1. 見出しリスト作成
       - Claude 3 Haiku に以下プロンプト
       ```
-      生成したいLPのイメージが伝わるよう、プロンプトを入力してください","""あなたはある<item></item>を訴求するランディングページを作成するメディアライターです。
+      あなたはある<item></item>を訴求するランディングページを作成するメディアライターです。
       <target></target>に<item></item>を使った<contents></contents>の魅力を伝えたいです。そのためのLPの構成となる見出しリストを作成してください。
       ```
   2. ダミー情報生成
@@ -117,26 +117,26 @@
       ```
   3. 画像の生成
       1. Titan Image Generator で画像を生成するためのプロンプトを Claude Sonnet で生成
-        ```
-        <content></content>を元に、各セクションに画像の説明をする文章を<rule></rule>に従って英語で作成してください。
-        出力は<output></output>のJSON形式で出力してください。画像名は<name></name>で与えられたモノを順に利用してください。
-        JSON 以外は出力しないでください。
-        <content>{assistant_return_3}</content>
-        <rule>
-        - HTMLのタグで表現できる内容は画像にしないでください。
-        - 画像の説明は{image_num}枚分作成してください。
-        - 暴力的な表現や誇大広告は避けてください。
-        - 生成する文章は AWS の責任ある AI ポリシーに従ってください。ポリシーのurl はhttps://aws.amazon.com/jp/machine-learning/responsible-ai/policy/ です。
-        </rule>
-        <name>
-        {img_name_dict}
-        </name>
-        <output>
-        {{
-            'image_9e3d82f':'ここに画像の説明をする文章を英語で入力します。画像生成 AI のプロンプトに沿った形式で入力してください。'
-        }}
-        </output>
-        ```
+          ```
+          <content></content>を元に、各セクションに画像の説明をする文章を<rule></rule>に従って英語で作成してください。
+          出力は<output></output>のJSON形式で出力してください。画像名は<name></name>で与えられたモノを順に利用してください。
+          JSON 以外は出力しないでください。
+          <content>{assistant_return_3}</content>
+          <rule>
+          - HTMLのタグで表現できる内容は画像にしないでください。
+          - 画像の説明は{image_num}枚分作成してください。
+          - 暴力的な表現や誇大広告は避けてください。
+          - 生成する文章は AWS の責任ある AI ポリシーに従ってください。ポリシーのurl はhttps://aws.amazon.com/jp/machine-learning/responsible-ai/policy/ です。
+          </rule>
+          <name>
+          {img_name_dict}
+          </name>
+          <output>
+          {{
+              'image_9e3d82f':'ここに画像の説明をする文章を英語で入力します。画像生成 AI のプロンプトに沿った形式で入力してください。'
+          }}
+          </output>
+          ```
   4. 生成された情報をまとめて、LPを生成
       ```
       <content></content>を元に、LP を作成してください。
