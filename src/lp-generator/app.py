@@ -132,7 +132,7 @@ def main():
         seed_value = st.number_input("シード値を入力してください (0 から " + str(MAX_SEED_VALUE) + ")", min_value=0, max_value=MAX_SEED_VALUE, value=st.session_state.seed_value, step=1)
 
     # 1回目のユーザの入力文
-    user_prompt_1 = st.text_area("生成したいLPのイメージが伝わるよう、プロンプトを入力してください","""あなたはある<item></item>を訴求する<media></media>を作成するメディアライターです。
+    user_prompt_1 = st.text_area("生成したいLPのイメージが伝わるよう、プロンプトを入力してください","""あなたはある<item></item>を訴求するランディングページを作成するメディアライターです。
 <target></target>に<item></item>を使った<contents></contents>の魅力を伝えたいです。そのためのLPの構成となる見出しリストを作成してください。
 
 <item>
