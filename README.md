@@ -225,7 +225,7 @@
 <details>
   <summary>商品説明文生成とLP生成の Dify Workflow</summary>
 
-[README](dify/README.md)
+[dify/](dify/)
 
 </details>
 
