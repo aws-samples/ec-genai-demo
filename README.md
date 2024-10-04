@@ -226,6 +226,7 @@
 <details>
   <summary>商品説明文生成とLP生成の Dify Workflow</summary>
 
+詳細は以下を確認ください。  
 [dify/](dify/)
 
 </details>
