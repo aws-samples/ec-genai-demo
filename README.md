@@ -137,6 +137,7 @@
           }}
           </output>
           ```
+      1. Titan Image Generator で画像を生成
   4. 生成された情報をまとめて、LPを生成
       ```
       <content></content>を元に、LP を作成してください。
