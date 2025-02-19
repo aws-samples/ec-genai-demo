@@ -9,14 +9,15 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Python 環境セットアップ
-RUN python3 -m venv /opt/venv
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1 && \
+    python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 RUN pip3 install --no-cache-dir poetry
 WORKDIR /app
 COPY pyproject.toml poetry.lock /app/ 
 RUN poetry config virtualenvs.create false && \
-    poetry install --no-interaction --no-ansi
+    poetry install --no-interaction --no-ansi --no-root
 
 COPY . /app
 
